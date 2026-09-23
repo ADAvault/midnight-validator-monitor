@@ -1,6 +1,7 @@
 [package]
 name = "midnight-validator-monitor"
 version = "1.0.5"
+license = "MIT"
 edition = "2021"
 description = "A monitoring tool for Midnight blockchain validators"
 authors = []
