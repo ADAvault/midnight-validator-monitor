@@ -130,16 +130,16 @@ No shell invocation via `/bin/sh -c`.
 
 ## Files Reviewed
 
-- `/home/midnight/midnight-validator-monitor/Cargo.toml`
-- `/home/midnight/midnight-validator-monitor/src/db/mod.rs`
-- `/home/midnight/midnight-validator-monitor/src/db/blocks.rs`
-- `/home/midnight/midnight-validator-monitor/src/db/validators.rs`
-- `/home/midnight/midnight-validator-monitor/src/db/schema.rs`
-- `/home/midnight/midnight-validator-monitor/src/rpc/client.rs`
-- `/home/midnight/midnight-validator-monitor/src/config.rs`
-- `/home/midnight/midnight-validator-monitor/src/commands/install.rs`
-- `/home/midnight/midnight-validator-monitor/src/daemon.rs`
-- `/home/midnight/midnight-validator-monitor/src/midnight/keystore.rs`
+- `Cargo.toml`
+- `src/db/mod.rs`
+- `src/db/blocks.rs`
+- `src/db/validators.rs`
+- `src/db/schema.rs`
+- `src/rpc/client.rs`
+- `src/config.rs`
+- `src/commands/install.rs`
+- `src/daemon.rs`
+- `src/midnight/keystore.rs`
 
 ---
 

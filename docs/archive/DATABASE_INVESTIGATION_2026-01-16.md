@@ -1,7 +1,7 @@
 # Database Investigation: Cardano db-sync Analysis
 
 **Date**: 2026-01-16
-**Database**: `cexplorer` on vdumds58.skynet (cardano-db-sync 13.6.0.4)
+**Database**: `cexplorer` (cardano-db-sync 13.6.0.4)
 **Network**: Preview testnet
 **Goal**: Find Midnight committee construction data
 

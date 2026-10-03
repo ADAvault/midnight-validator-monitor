@@ -17,8 +17,9 @@
 .DS_Store
 Thumbs.db
 
-# Discord exports (may contain private messages)
-discord-context/*.json
+# Local-only context, never committed
+CLAUDE.md
+discord-context/
 
 # Local database files
 *.db

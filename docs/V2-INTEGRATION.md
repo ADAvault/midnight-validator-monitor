@@ -297,7 +297,7 @@ endpoints = []
 
 [integration]
 chain_id = "midnight"  # For multi-chain datahub
-instance_name = "mdn57-validator"  # Human-readable identifier
+instance_name = "my-validator"  # Human-readable identifier
 ```
 
 ---
@@ -339,7 +339,6 @@ instance_name = "mdn57-validator"  # Human-readable identifier
 ## References
 
 - [SPO Monitor Vision](https://github.com/adavault/spo-monitor/blob/main/docs/VISION.md) (private)
-- [MVM CLAUDE.md](./CLAUDE.md)
 - [Prometheus Exposition Format](https://prometheus.io/docs/instrumenting/exposition_formats/)
 - [JSON:API Specification](https://jsonapi.org/)
 

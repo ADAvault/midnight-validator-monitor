@@ -112,7 +112,7 @@ Cardano's ethos is true decentralization. MVM embodies this - designed for commu
 - Binary releases via GitHub Releases (CI already in place)
 - Manual deployment to test/production nodes
 - No containers - single static binary is sufficient
-- Test environment: mdn90 (vdumdn90) with manual deploys
+- Test environment: a dedicated test node with manual deploys
 
 **Rationale:** MVM is a ~5MB static binary with no runtime dependencies. Containers add overhead without benefit at this stage.
 
@@ -141,7 +141,7 @@ Cardano's ethos is true decentralization. MVM embodies this - designed for commu
 ### Future Considerations
 
 - **Container Registry:** Start with GHCR (free, tied to repo), evaluate Docker Hub based on adoption
-- **CD Pipeline:** May add auto-deploy to staging (mdn90) in v1.x if manual deployment becomes friction
+- **CD Pipeline:** May add auto-deploy to staging in v1.x if manual deployment becomes friction
 
 ---
 

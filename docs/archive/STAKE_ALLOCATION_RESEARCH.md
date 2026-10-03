@@ -49,7 +49,7 @@ This document tracks our research into understanding how Cardano stake pool perf
 
 ## Data Sources
 
-### 1. Midnight Partnerchain (vdumds58)
+### 1. Midnight Partnerchain
 
 **Available Data**:
 - Running Midnight node with RPC access
@@ -59,7 +59,7 @@ This document tracks our research into understanding how Cardano stake pool perf
 
 **Access Method**:
 ```bash
-ssh vdumds58
+ssh <validator-host>
 # Inspect partnerchain containers
 docker ps | grep midnight
 docker logs <container_id>
@@ -75,7 +75,7 @@ docker exec -it <dbsync_container> psql -U postgres
 - `get_storage("SessionCommitteeManagement", "NextCommittee")` - Predict next epoch committee
 - `sidechain_getEpochCommittee(epoch)` - Historical committees (if state permits)
 
-### 2. Cardano Node (vducdn59)
+### 2. Cardano Node
 
 **Available Data**:
 - Cardano preview network node
@@ -317,13 +317,13 @@ let expected_blocks = epoch_slots * (expected_seats / committee_size);
 
 ## Access Requirements Checklist
 
-- [ ] SSH access to vducdn59 (Cardano node)
+- [ ] SSH access to the Cardano node
 - [ ] Cardano node RPC endpoint URL and credentials
 - [ ] Cardano signing keys used for Midnight registration
 - [ ] Documentation on stake allocation (if available)
 - [ ] Pool ID(s) for test validators
 
-**Note**: vdumds58 access already available
+**Note**: validator host access already available
 
 ---
 
@@ -400,7 +400,7 @@ See `MIDNIGHT_BLOCKLOG_ANALYSIS.md` for full technical details.
 
 ## Questions for User
 
-1. Can you provide SSH/RPC access to vducdn59 (Cardano node)?
+1. Can you provide SSH/RPC access to the Cardano node?
 2. Which Cardano pool ID(s) are associated with your Midnight validator?
 3. Do you have the signing keys used for registration transactions?
 4. Is there any existing documentation on the stake allocation mechanism?
@@ -415,7 +415,7 @@ See `MIDNIGHT_BLOCKLOG_ANALYSIS.md` for full technical details.
 
 ### 2026-01-16 - Initial Research
 
-**Cardano Node Access Established** (vducdn59):
+**Cardano Node Access Established**:
 - Network: Preview testnet (testnet-magic 2)
 - Current epoch: 1179
 - Pool ID: `pool1myvqymdmf9f26746d6uvfk34hqr7lq998n43xprgz4c27tpa6rd`
@@ -431,13 +431,13 @@ See `MIDNIGHT_BLOCKLOG_ANALYSIS.md` for full technical details.
 
 **Network Total Stake**: ~1.066T ADA
 
-**Midnight Validator Keys** (vdumds58):
+**Midnight Validator Keys**:
 - AURA key: `0xe05be3c28c72864efc49f4f12cb04f3bd6f20fdbc297501aa71f8590273b3e1e`
 - Sidechain key: `0x037764d2d83c269030fef6df5aeb4419c48762ada2cf20b0e4e6ede596809f4700`
 - GRANDPA key: `0xf5a39df9227f630754f78bbae43bd66a693612eeffa9ceec5681f6c05f48d0e8`
-- Keystore: `/home/midnight/midnight-node-docker/data/chains/partner_chains_template/keystore/`
+- Keystore: `~/midnight-node-docker/data/chains/partner_chains_template/keystore/`
 
-**Cardano Registration Keys** (used from vdumds58 ~/priv):
+**Cardano Registration Keys**:
 - Payment vkey: `daa28e3f127bafe647f883e1a1d2c95de31ec1e56bf15ef498af5d6d532ab8e3`
 - Used to register Midnight validator with Cardano pool
 
@@ -472,7 +472,7 @@ Reality check:
 3. Critical fix is essential before any analysis can proceed
 
 **Next Steps**:
-- ~~Connect to vdumds58~~ ✅ DONE
+- ~~Connect to the validator host~~ ✅ DONE
 - ~~Find Midnight validator keys~~ ✅ DONE
 - ~~Link Cardano pool to validator~~ ✅ DONE
 - ~~Fetch current committee~~ ✅ DONE - 1199 members confirmed
@@ -483,5 +483,5 @@ Reality check:
 ---
 
 **Status**: Awaiting access to Cardano node and initial data collection
-**Next Action**: Begin dbsync analysis on vdumds58
+**Next Action**: Begin dbsync analysis
 **Blocking**: Cardano node access for complete correlation analysis

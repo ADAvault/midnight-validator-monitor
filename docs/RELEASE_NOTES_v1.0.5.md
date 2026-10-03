@@ -13,7 +13,7 @@ Daemon mode now retries the initial RPC connection with exponential backoff inst
 
 ## Problem
 
-After a server reboot on vdumdn57, `mvm-sync --daemon` crashed and was restarted by systemd **466 times** over 79 minutes because the Midnight node took longer to start than the mvm service. Each crash produced ~6.5 error lines, totaling 3,026 lines of noise in the journal. The daemon was exiting on the very first RPC failure at startup, relying entirely on systemd `Restart=on-failure` for recovery.
+After a server reboot, `mvm-sync --daemon` crashed and was restarted by systemd **466 times** over 79 minutes because the Midnight node took longer to start than the mvm service. Each crash produced ~6.5 error lines, totaling 3,026 lines of noise in the journal. The daemon was exiting on the very first RPC failure at startup, relying entirely on systemd `Restart=on-failure` for recovery.
 
 ## Fix
 

@@ -103,16 +103,16 @@ Implemented based on Discord channel analysis of validator pain points:
 
 ## Build Pipeline
 
-Build VM provisioned at secondary site (vdumdn90):
-- [x] Provision VM (vdumdn90: 32GB RAM, 4 CPUs, Ubuntu)
+Build VM provisioned:
+- [x] Provision VM (32GB RAM, 4 CPUs, Ubuntu)
 - [x] Install Rust toolchain (1.93.0) and build dependencies
-- [x] Configure SSH access from vdumdn57
+- [x] Configure SSH access from the validator host
 - [x] Create remote build script (`scripts/build-remote.sh`)
 - [x] Deploy Midnight sync node for integration testing
 
 **Build Script Usage:**
 ```bash
-# Build only
+# Build only (BUILD_HOST=user@host names the build machine)
 ./scripts/build-remote.sh
 
 # Pull latest, build, and deploy
@@ -122,15 +122,15 @@ Build VM provisioned at secondary site (vdumdn90):
 ./scripts/build-remote.sh --clean
 ```
 
-**Test Node (vdumdn90):**
+**Test Node (on the build VM):**
 - Sync-only node (no validator keys)
-- Connects to partnerchains postgres on vdumds58
-- RPC: `http://vdumdn90:9944`
-- Metrics: `http://vdumdn90:9615`
+- Connects to the partnerchains postgres on the validator host
+- RPC: port 9944
+- Metrics: port 9615
 - Compose file: `~/midnight-node/compose.yml`
 
 ### Future Enhancements
-- [ ] Set up GitHub Actions self-hosted runner on vdumdn90
+- [ ] Set up GitHub Actions self-hosted runner on the build VM
 - [ ] Add cross-compilation for ARM64 (Mac M-series)
 - [ ] Automated release builds with version tagging
 - [ ] Integration test suite using test node RPC

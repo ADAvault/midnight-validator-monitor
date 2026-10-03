@@ -203,4 +203,3 @@ The committee rotates at **sidechain epoch boundaries**:
 
 - `src/tui/app.rs` - Epoch progress calculations
 - `src/rpc/types.rs` - SidechainStatus struct definition
-- CLAUDE.md - Midnight-specific timing documentation

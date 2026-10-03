@@ -1,7 +1,7 @@
 # MVM Sync Daemon Stability Report
 
 **Date:** 2026-02-21
-**Server:** vdumdn57 (testnet-02, build server)
+**Server:** testnet-02 validator (also the build server)
 **Version:** mvm 1.0.3
 **Assessed by:** Claude Code (automated analysis)
 

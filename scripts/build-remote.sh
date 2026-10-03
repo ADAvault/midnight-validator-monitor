@@ -1,10 +1,12 @@
 #!/bin/bash
 # Remote build script for MVM
-# Builds on vdumdn90 and optionally deploys to local machine
+# Builds on a remote host and optionally deploys to the local machine
+#
+# BUILD_HOST=user@host ./scripts/build-remote.sh [OPTIONS]
 
 set -e
 
-BUILD_HOST="rezi@vdumdn90"
+BUILD_HOST="${BUILD_HOST:-}"
 BUILD_DIR="~/midnight-validator-monitor"
 BINARY_NAME="mvm"
 
@@ -26,6 +28,9 @@ usage() {
     echo "  --deploy     Deploy binary to /usr/local/bin after build"
     echo "  --clean      Clean build (cargo clean first)"
     echo "  --help       Show this help"
+    echo ""
+    echo "Environment:"
+    echo "  BUILD_HOST   user@host of a machine with the Rust toolchain (required)"
     echo ""
     echo "Examples:"
     echo "  $0                    # Build only"
@@ -59,6 +64,8 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+[ -n "$BUILD_HOST" ] || error "Set BUILD_HOST to user@host of the build machine"
 
 # Check SSH connectivity
 log "Checking SSH connectivity to $BUILD_HOST..."

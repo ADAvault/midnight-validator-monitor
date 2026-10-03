@@ -216,12 +216,12 @@ For future prediction:
 
 ### Our Test Pool
 
-**Cardano Pool** (vducdn59):
+**Cardano Pool**:
 - Pool ID: `pool1myvqymdmf9f26746d6uvfk34hqr7lq998n43xprgz4c27tpa6rd`
 - Stake: ~1.258M ADA (0.12% of network)
 - Epoch: 1179
 
-**Midnight Validator** (vdumds58):
+**Midnight Validator**:
 - NOT in committee (0 seats)
 - False attribution: 23 blocks (due to bug)
 - Status: Inactive or not registered in epoch 1179
@@ -254,7 +254,7 @@ For future prediction:
 
 ## References
 
-- **Node**: vdumds58 (testnet-02)
+- **Node**: our testnet-02 validator
 - **RPC Method**: `state_call("AuraApi_authorities", "0x")`
 - **Epoch**: 1179
 - **Analysis Date**: 2026-01-16

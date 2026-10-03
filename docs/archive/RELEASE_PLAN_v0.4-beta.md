@@ -557,7 +557,7 @@ pub enum Alert {
 - [ ] Document migration path for existing users
 
 **Week 2 - Stake Allocation Research**:
-- [ ] Analyze dbsync data on vdumds58 (partnerchain containers)
+- [ ] Analyze dbsync data (partnerchain containers)
 - [ ] Examine Cardano stake pool registration and performance data
 - [ ] Map Cardano pool IDs to Midnight validator keys
 - [ ] Fetch and analyze multiple epoch committees

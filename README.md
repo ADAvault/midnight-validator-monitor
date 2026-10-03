@@ -461,7 +461,6 @@ sudo mvm install uninstall --remove-data
 
 - `README.md` - This file, main usage documentation
 - `DEPLOYMENT.md` - Detailed deployment guide with systemd setup
-- `CLAUDE.md` - Architecture and implementation details for developers
 - `RELEASE_NOTES_v0.9.1.md` - Current release notes
 - `docs/BACKLOG.md` - Future feature plans and known issues
 - `docs/BLOCK_ATTRIBUTION.md` - Block author attribution design
