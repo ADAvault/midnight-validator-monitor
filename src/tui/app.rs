@@ -809,7 +809,7 @@ impl App {
             // Sort by best_number descending (most synced peers first)
             self.state
                 .connected_peers
-                .sort_by(|a, b| b.best_number.cmp(&a.best_number));
+                .sort_by_key(|a| std::cmp::Reverse(a.best_number));
 
             // Count inbound/outbound
             self.state.peers_outbound = self
@@ -1383,7 +1383,7 @@ impl App {
         } else {
             self.state.validators.clone()
         };
-        validators.sort_by(|a, b| b.total_blocks.cmp(&a.total_blocks));
+        validators.sort_by_key(|a| std::cmp::Reverse(a.total_blocks));
 
         let index = self.selected_index();
         if index >= validators.len() {

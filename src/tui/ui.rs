@@ -1307,7 +1307,7 @@ fn render_performance(f: &mut Frame, app: &App, area: Rect, layout: &ResponsiveL
     };
 
     // Sort by block count descending
-    validators.sort_by(|a, b| b.total_blocks.cmp(&a.total_blocks));
+    validators.sort_by_key(|a| std::cmp::Reverse(a.total_blocks));
 
     // Always use total blocks from all validators for percentage (not filtered total)
     let total_blocks = app.state.total_blocks;

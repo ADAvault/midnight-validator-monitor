@@ -46,7 +46,7 @@ pub fn decode_aura_authorities(hex_response: &str) -> Result<Vec<String>> {
 
     // Parse 32-byte chunks as AURA keys
     let mut authorities = Vec::with_capacity(count);
-    for chunk in key_data.chunks_exact(32) {
+    for chunk in key_data.as_chunks::<32>().0 {
         authorities.push(format!("0x{}", hex::encode(chunk)));
     }
 
