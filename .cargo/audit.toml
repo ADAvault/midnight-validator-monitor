@@ -1,0 +1,6 @@
+# cargo audit configuration: read by `cargo audit`, and so by CI's rustsec/audit-check.
+[advisories]
+# RUSTSEC-2026-0459: libsqlite3-sys 0.27.0 bundles SQLite before 3.54.0 (via rusqlite 0.30).
+# A crafted database and -wal pair can return stale memory; mvm opens only the database
+# files it writes itself. The fix is rusqlite 0.41 (Rust 1.89): remove this with that bump.
+ignore = ["RUSTSEC-2026-0459"]
